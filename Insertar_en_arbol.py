@@ -36,5 +36,6 @@ def CrearArbolPrueba():
     InsertarEnArbol(NodoFijo=nodoInicial, NodoAgregar=Nodo(val=100))
     return nodoInicial
 
-nodo = CrearArbolPrueba()
-print(Contar_hojas.obtenerCantHojas(nodo, nodo))
+def mainCrearArbol():
+    nodo = CrearArbolPrueba()
+    return nodo
