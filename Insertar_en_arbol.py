@@ -1,4 +1,5 @@
 from Nodo import Nodo
+import Contar_hojas
 
 def InsertarEnArbol(NodoFijo, NodoAgregar):
     if NodoAgregar is not None and NodoFijo is not None:
@@ -35,8 +36,6 @@ def CrearArbolPrueba():
     InsertarEnArbol(NodoFijo=nodoInicial, NodoAgregar=Nodo(val=100))
     return nodoInicial
 
-
-nodo = CrearArbolPrueba()
-print(nodo.der.val)
-
-
+def mainCrearArbol():
+    nodo = CrearArbolPrueba()
+    return nodo
