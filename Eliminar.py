@@ -11,10 +11,10 @@ def TwoChilds(nodo, nodoReemplazo):
             nodo.der = nodoHijoReemplazo
         return None
     else:
-		# Me habia olvidado de borrar el nodo antes de pasarlo
+        # Me habia olvidado de borrar el nodo antes de pasarlo
         nodoReemplazo[0] = Nodo(val=nodo.val) # Creo un nodo nuevo con el nodo que estoy por borrar
-		nder = nodo.der # Guardo el nodo derecho para poder borrar el nodo actual
-		nodo = None # Borro el nodo
+        nder = nodo.der # Guardo el nodo derecho para poder borrar el nodo actual
+        nodo = None # Borro el nodo
         if nder is not None:
             return nodo.der
         
@@ -27,13 +27,13 @@ def Eliminar(nodoFijo, valBorrar):
             nodoFijo = None
         elif nodoFijo.izq is not None and nodoFijo.der is not None:  # Tiene hijos en los dos lados
             # Al pasar una lista, simulo un parametro por referencia (python no tiene parametros por referencia)
-			nodoReemplazo = []  
+            nodoReemplazo = []  
             
-			TwoChilds(nodo= nodoFijo.der, nodoReemplazo= nodoReemplazo)
-			
-			# Asigno al nuevo nodo los hijos del viejo, y hago el reemplazo
-			nodoReemplazo[0].izq = nodoFijo.izq
-			nodoReemplazo[0].der = nodoFijo.der
+            TwoChilds(nodo= nodoFijo.der, nodoReemplazo= nodoReemplazo)
+            			
+            # Asigno al nuevo nodo los hijos del viejo, y hago el reemplazo
+            nodoReemplazo[0].izq = nodoFijo.izq
+            nodoReemplazo[0].der = nodoFijo.der
             nodoFijo = nodoReemplazo[0]
         elif nodoFijo.izq is not None: # Tiene un hijo a la izquierda
             nodoFijo = nodoFijo.izq
